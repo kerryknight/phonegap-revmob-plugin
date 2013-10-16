@@ -30,6 +30,12 @@
 	var RevMob = {
 	    initWithAppId: function(appId, successCallback, errorCallback) {
 			if(!appId) return false;
+
+			var s = this;
+			s.TEST_DISABLED = 0;
+			s.TEST_WITH_ADS = 1;
+			s.TEST_WITHOUT_ADS = 2;
+
 			return cordova.exec(successCallback, errorCallback, service, "startSession", [appId]);
 		},
 
@@ -46,22 +52,7 @@
 		},
 
 		setTestingMode: function(testingMode) {
-			var test_mode = 0;
-			
-			switch(testingMode) {
-				case "TEST_DISABLED":
-				break;
-				case "TEST_WITH_ADS":
-					test_mode = 1;
-					break;
-				case "TEST_WITHOUT_ADS":
-					test_mode = 2;
-					break;
-				default:
-					break;
-			}
-
-			return cordova.exec(null, null, service, "setTestingMode", [test_mode]);
+			return cordova.exec(null, null, service, "setTestingMode", [testingMode]);
 		},
 
 		printEnvironmentInformation: function() {
