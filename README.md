@@ -6,7 +6,7 @@ Update to the official [RevMob Phonegap Cordova SDK](http://sdk.revmobmobileadne
 ### Notes: 
 * Currently works for iOS only.
 * Tested using iOS 6.1 and 7.0
-* Tested using Phonegap 2.9.0, 3.0.0 and 3.1.0
+* Tested so far only using Phonegap CLI 3.1.0
 * Requires using Phonegap CLI for automatic local installation
 
 ### Files Modified from the [RevMob Phonegap Cordova SDK](http://sdk.revmobmobileadnetwork.com/phonegap_cordova.html) to enable automatic installation:
