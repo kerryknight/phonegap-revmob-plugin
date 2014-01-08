@@ -12,11 +12,22 @@
       <engine name="cordova" version=">=2.9.0" />
     </engines>
 	
-	<!-- ios -->
 	<js-module src="www/revmob.js" name="RevMob">
         <clobbers target="RevMob" />
     </js-module>
 
+	<!-- android -->
+	<platform name="android">
+		<config-file target="config.xml" parent="/*">
+			<feature name="RevMobPlugin">
+				<param name="android-package" value="com.revmob.cordova.RevMobPlugin"/>
+			</feature>
+		</config-file>
+
+		<source-file src="src/android/revmob-android-wrapper.jar" target-dir="libs" />
+	</platform>
+
+	<!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
 		    <feature name="RevMobPlugin">
